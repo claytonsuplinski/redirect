@@ -1,0 +1,9 @@
+<script>
+var url = window.location.href.split('?').slice(1).join('?');
+if( url ){
+	if( ![ 'http', 'ftp' ].find( x => url.startsWith(x) ) ){
+		url = 'https://' + url;
+	}
+	window.location.replace( url );
+}
+</script>
