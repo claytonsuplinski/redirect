@@ -1,9 +1,29 @@
+<html>
+<head>
+<style>
+iframe{
+	width:100vw;
+	height:100vh;
+	position:fixed;
+	top:0;
+	left:0;
+	background:#000;
+	border:0;
+}
+</style>
+</head>
+<body>
+	<iframe id="content"></iframe>
+</body>
 <script>
 var url = window.location.href.split('?').slice(1).join('?');
 if( url ){
 	if( ![ 'http', 'ftp' ].find( x => url.startsWith(x) ) ){
 		url = 'https://' + url;
 	}
-	window.location.replace( url );
+
+	console.log( url );
+	document.getElementById('content').setAttribute( "src", url )
 }
 </script>
+</html>
