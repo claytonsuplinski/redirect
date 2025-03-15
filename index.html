@@ -18,6 +18,7 @@ iframe{
 <script>
 var url = window.location.href.split('?').slice(1).join('?');
 if( url ){
+	url = decodeURIComponent( url );
 	if( ![ 'http', 'ftp' ].find( x => url.startsWith(x) ) ){
 		url = 'https://' + url;
 	}
